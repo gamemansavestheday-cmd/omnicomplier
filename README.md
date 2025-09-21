@@ -21,3 +21,4 @@ OmniCompiler is a single, powerful Bash script that provides a unified interface
 *   **Simple, Powerful Interface:** An AI can easily generate commands in the simple `omnicompiler <type> <target>` format, removing the need for it to memorize the specific CLI flags and quirks of every toolchain.
 *   **Robust Logging:** Every action taken by the OmniCompiler is logged to a file, providing a crucial audit trail for debugging the behavior of an AI agent.
 *   **Extensible Framework:** The core mission is extensibility. Adding support for a new language or tool is as simple as writing a new function and adding one line to the central dispatcher, a task easily performed by an advanced LLM.
+(notes the old name was supercomplier and i forgot to remove someo of the things....)
