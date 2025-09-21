@@ -22,3 +22,26 @@ OmniCompiler is a single, powerful Bash script that provides a unified interface
 *   **Robust Logging:** Every action taken by the OmniCompiler is logged to a file, providing a crucial audit trail for debugging the behavior of an AI agent.
 *   **Extensible Framework:** The core mission is extensibility. Adding support for a new language or tool is as simple as writing a new function and adding one line to the central dispatcher, a task easily performed by an advanced LLM.
 (notes the old name was supercomplier and i forgot to remove someo of the things....)
+
+---
+
+## How to Use
+
+1.  **Place your code:** Put the source code files or projects you want to build into the `~/supercompiler/project_folder/`. The script creates this directory for you.
+
+2.  **Run the OmniCompiler:** Open your terminal and call the script with the type and the target filename/project name.
+
+**Examples:**
+
+```bash
+# Compile and run a Java file
+./super_compiler.sh java MyClass.java
+
+# Compile a C++ project
+./super_compiler.sh cpp main.cpp
+
+# Build a Unity project directory
+./super_compiler.sh unity MyUnityGame
+
+# Scan the project folder and build everything
+./super_compiler.sh all all
