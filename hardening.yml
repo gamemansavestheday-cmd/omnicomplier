@@ -1,0 +1,28 @@
+name: Hardening
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  spdx-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run SPDX header check
+        run: |
+          bash ./scripts/check_spdx.sh
+
+  secret-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run basic secret scan
+        run: |
+          # Simple grep for obvious tokens (not exhaustive)
+          if git grep -I --line-number "AWS_SECRET_ACCESS_KEY\|AWS_ACCESS_KEY_ID\|PRIVATE_KEY\|password"; then
+            echo "Potential secret found" && exit 1
+          fi
+          echo "Basic secret scan passed"
