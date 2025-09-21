@@ -24,24 +24,22 @@ OmniCompiler is a single, powerful Bash script that provides a unified interface
 (notes the old name was supercomplier and i forgot to remove someo of the things....)
 
 ---
+---
 
-## How to Use
+## The OmniCompiler Workflow
 
-1.  **Place your code:** Put the source code files or projects you want to build into the `~/supercompiler/project_folder/`. The script creates this directory for you.
+The OmniCompiler is not meant to be used directly by humans. It is the execution layer for an AI agent. The workflow is a partnership between you and your AI.
 
-2.  **Run the OmniCompiler:** Open your terminal and call the script with the type and the target filename/project name.
+**You are the Architect, the AI is the Builder.**
 
-**Examples:**
+1.  **You Provide the Goal:** You give a high-level, natural language command to your AI agent.
+    > **"Hey AI, code me a simple game in Unity."**
 
-```bash
-# Compile and run a Java file
-./super_compiler.sh java MyClass.java
+2.  **The AI Generates the Code:** The AI agent understands your request and generates the necessary source code files (`.cs`, `.cpp`, `.java`, etc.), placing them into the `~/supercompiler/project_folder/`.
 
-# Compile a C++ project
-./super_compiler.sh cpp main.cpp
+3.  **The AI Executes the Build:** The AI's final step is to formulate the correct command for the OmniCompiler and execute it to bring the project to life.
+    > **AI executes:** `./omnicompiler.sh unity MySimpleGame`
 
-# Build a Unity project directory
-./super_compiler.sh unity MyUnityGame
+4.  **The Result:** The OmniCompiler handles the complex, tool-specific build process, logging the output. The AI can then analyze the logs to debug errors or confirm success, reporting the final result back to you.
 
-# Scan the project folder and build everything
-./super_compiler.sh all all
+This loop—from your high-level goal to the AI's code generation to the OmniCompiler's execution—is the core of the AI agent development process. OmniCompiler provides the critical, reliable "last mile" to turn the AI's code into a tangible result.
