@@ -24,22 +24,48 @@ OmniCompiler is a single, powerful Bash script that provides a unified interface
 (notes the old name was supercomplier and i forgot to remove someo of the things....)
 
 ---
----
 
-## The OmniCompiler Workflow
+## The AI Agent Workflow
 
-The OmniCompiler is not meant to be used directly by humans. It is the execution layer for an AI agent. The workflow is a partnership between you and your AI.
+OmniCompiler is not designed to be used directly by humans. It is a tool built for an AI. Your role is not to be the operator, but the **project manager.** The AI is your junior developer.
 
-**You are the Architect, the AI is the Builder.**
+This is the intended workflow:
 
-1.  **You Provide the Goal:** You give a high-level, natural language command to your AI agent.
-    > **"Hey AI, code me a simple game in Unity."**
+**1. Give the Tool to the AI:**
+The first step is to make your AI "aware" of the OmniCompiler. You do this by providing the full source code of the `super_compiler.sh` script as part of your initial prompt or context. The AI will read the comments and functions to understand its own capabilities.
 
-2.  **The AI Generates the Code:** The AI agent understands your request and generates the necessary source code files (`.cs`, `.cpp`, `.java`, etc.), placing them into the `~/supercompiler/project_folder/`.
+**2. State Your High-Level Goal:**
+Give your AI a task, just as you would a human developer. Do not tell it *how* to compile the code; simply tell it what you want to create.
 
-3.  **The AI Executes the Build:** The AI's final step is to formulate the correct command for the OmniCompiler and execute it to bring the project to life.
-    > **AI executes:** `./omnicompiler.sh unity MySimpleGame`
+> **Your Prompt to the AI:**
+> "Write a simple 'Hello World' program in C++. Then, tell me the exact command I need to run to compile it using the OmniCompiler script you have."
 
-4.  **The Result:** The OmniCompiler handles the complex, tool-specific build process, logging the output. The AI can then analyze the logs to debug errors or confirm success, reporting the final result back to you.
+**3. The AI Generates the Code and the Command:**
+The AI will use its knowledge to perform two actions:
+*   It will write the `hello.cpp` source code.
+*   It will formulate the precise OmniCompiler command needed to build that code.
 
-This loop—from your high-level goal to the AI's code generation to the OmniCompiler's execution—is the core of the AI agent development process. OmniCompiler provides the critical, reliable "last mile" to turn the AI's code into a tangible result.
+> **The AI's Expected Response:**
+> "Of course. Here is the C++ code for 'Hello World'. Save it in a file named `hello.cpp` inside your `~/supercompiler/project_folder/`:
+>
+> ```cpp
+> #include <iostream>
+>
+> int main() {
+>     std::cout << "Hello, World!" << std::endl;
+>     return 0;
+> }
+> ```
+>
+> Once you have saved the file, run the following command in your terminal to compile and execute it:
+>
+> ```bash
+> ./super_compiler.sh cpp hello.cpp
+> ```"
+
+**4. You Authorize and Execute:**
+The human's final role is to authorize the action. You save the code the AI provided and run the command it generated.
+
+This workflow maintains a crucial "human-in-the-loop" for safety, while offloading all the cognitive work of coding and command formulation to the AI.
+
+**You provide the vision. The AI writes the code. OmniCompiler performs the action.**
